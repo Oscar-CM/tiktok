@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #07070b;
+  --foreground: #f4f4f6;
 }
 
 @theme inline {
@@ -12,15 +12,56 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: radial-gradient(
+      80% 60% at 50% -10%,
+      rgba(139, 92, 246, 0.18),
+      transparent
+    ),
+    radial-gradient(60% 50% at 100% 0%, rgba(34, 211, 238, 0.12), transparent),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+}
+
+.gradient-text {
+  background-image: linear-gradient(90deg, #a78bfa, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-border {
+  border: 1px solid transparent;
+  background-image: linear-gradient(
+      var(--background),
+      var(--background)
+    ),
+    linear-gradient(90deg, #a78bfa, #22d3ee);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.btn-gradient {
+  background-image: linear-gradient(90deg, #8b5cf6, #22d3ee);
+  color: #07070b;
+  font-weight: 600;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.btn-gradient:hover:not(:disabled) {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn-gradient:disabled {
+  opacity: 0.5;
+  transform: none;
 }

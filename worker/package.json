@@ -1,0 +1,30 @@
+{
+  "name": "worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "@aws-sdk/client-s3": "^3.700.0",
+    "@neondatabase/serverless": "^1.0.1",
+    "@remotion/bundler": "4.0.286",
+    "@remotion/renderer": "4.0.286",
+    "@remotion/transitions": "4.0.286",
+    "drizzle-orm": "^0.44.5",
+    "msedge-tts": "^2.0.6",
+    "music-metadata": "^10.6.4",
+    "openai": "^4.73.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "remotion": "4.0.286"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
+  }
+}

@@ -23,6 +23,10 @@ export async function renderVideo(input: {
   captionWords: CaptionWord[];
   audioUrl: string;
 }): Promise<string> {
+  if (input.scenes.length === 0) {
+    throw new Error("renderVideo called with no scenes");
+  }
+
   const serveUrl = await getBundleUrl();
 
   const composition = await selectComposition({

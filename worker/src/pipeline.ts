@@ -16,7 +16,6 @@ async function update(id: string, values: Partial<Job>) {
 }
 
 async function runAiPipeline(job: Job) {
-  await update(job.id, { status: "generating_script" });
   const scriptResult = await generateScript(job.topic);
   await update(job.id, { script: scriptResult.fullScript });
 
